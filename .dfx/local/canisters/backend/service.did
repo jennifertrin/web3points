@@ -1,0 +1,24 @@
+service : {
+  getTotalAmountByAddress : (text) -> (nat32) query;
+  getTotalTokenByAddress : (text) -> (nat) query;
+  getUserLoginStreak : (text) -> (nat32) query;
+  getUserProfile : (text) -> (
+      record { name : text; email : text; address : text },
+    ) query;
+  getUserProfileById : (nat32) -> (
+      opt record { name : text; email : text; address : text },
+    ) query;
+  getUserTransactions : (text) -> (
+      vec record {
+        id : text;
+        redeemed : bool;
+        timestamp : nat64;
+        amount : nat32;
+      },
+    ) query;
+  updateUser : (record { name : text; email : text; address : text }) -> (
+      record { name : text; email : text; address : text },
+    );
+  whoami : () -> (text) query;
+  withdraw : (text) -> (record { Ok : nat32; Message : text });
+}

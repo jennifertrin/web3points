@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Web3 Points Example (WIP)
 
-## Getting Started
+## Description
 
-First, run the development server:
+This project demonstrates how to build a "points" program or a loyalty program that rewards users for specific engagement and often intends to allow participants to redeem their rewards for a cryptocurrency. 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Some popular examples of points programs in the web3 ecosystem include [Rainbow](https://rainbow.me/points), [Eigenlayer](https://docs.eigenlayer.xyz/eigenlayer/restaking-guides/restaking-user-guide/restaked-point), and [Renzo](https://docs.renzoprotocol.com/docs/product/renzo-ezpoints). 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+In these examples, users can earn points by using the different features on the dapps and transacting with the protocols (ex. swapping tokens, investing tokens, etc.). 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Dapps and protocols develop points programs to increase engagement, validate features, and track and analyze user activity, often with the intent of allowing users to redeem their points for a future token airdrop. 
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To learn more about points programs in web3, please refer to the following articles:
 
-## Learn More
+- [Web3 Points: The Frontier of Community Building](https://www.samudai.xyz/page/web3-points-the-frontier-of-community-building)
+- [Lessons on Points Programs for Crypto Apps](https://www.lisnewsletter.com/p/lessons-on-points-programs)
+- [Crypto Points Systems Are a 100x Opportunity, But Founders, Be Wary](https://www.coindesk.com/tv/unchained/crypto-points-systems-are-a-100x-opportunity-but-founders-be-wary/)
 
-To learn more about Next.js, take a look at the following resources:
+## Building a points program
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Teams who are looking to build a points program need the following:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. **Define Earning Activities and Point Values**
 
-## Deploy on Vercel
+- Outline user activities you want to incentivize (ex. purchases, referrals, etc.).
+- Assign point values to each activity.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Implement Point Tracking and Awarding**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Develop a backend service to track user activity and identify activities associated with point rewards.
+
+3. **Plan for Future Airdrops (Optional)**:
+
+- If considering an airdrop, teams need to design a system for users to redeem their points. Consider establishing a clear conversion rate between points and tokens and a points-to-token redemption system.
+
+## Demo Example 
+
+This project showcases a dapp that allows a user to log in using Ethereum sign-in, earn points by updating their profile, and then redeem their points for an equivalent amount of $BERRY tokens. 
+
+**Frontend**
+
+The frontend application is built using [NextJS](https://nextjs.org/) and is deployed as an [ICP canister smart contract](https://internetcomputer.org/docs/current/developer-docs/smart-contracts/overview/introduction). It integrates [IC-SIWE](https://github.com/kristoferlund/ic-siwe) to allow users to log in using their Ethereum wallet (ex. Metamask).
+
+**Backend**
+
+The backend application is an [ICP canister smart contract](https://internetcomputer.org/docs/current/developer-docs/smart-contracts/overview/introduction) written in [Typescript](https://internetcomputer.org/docs/current/developer-docs/backend/typescript/) using [Azle](https://demergent-labs.github.io/azle/the_azle_book.html). 
+
+## Future Improvements 
+
+Future features include:
+
+- Converting points to an ERC-20 token
+
+
+
